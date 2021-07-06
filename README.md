@@ -1,3 +1,7 @@
+## Notes:
+- Current version of c-r-a is expecting a test file to have the word "test" not "spec" in the name and won't find it otherwise
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
