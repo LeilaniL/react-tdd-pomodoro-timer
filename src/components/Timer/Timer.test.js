@@ -11,4 +11,8 @@ describe('Timer', () => {
   it("should render a <div />", () => {
     expect(container.find("div").length).toBeGreaterThanOrEqual(1)
   })
+
+  it("should render 3 instances of the TimerButton component", () => {
+    expect(container.find("TimerButton").length).toEqual(3)
+  })
 })

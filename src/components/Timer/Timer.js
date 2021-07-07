@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Timer.css';
+import TimerButton from '../TimerButton/TimerButton';
 
 class Timer extends Component {
   constructor(props) {
@@ -22,7 +23,12 @@ class Timer extends Component {
   }
 
   render = () => {
-    return (<div className="timer-container" />)
+    return (
+      <div className="timer-container">
+        <TimerButton buttonAction={this.startTimer} buttonValue={'Start'} />
+        <TimerButton buttonAction={this.stopTimer} buttonValue={'Stop'} />
+        <TimerButton buttonAction={this.resetTimer} buttonValue={'Reset'} />
+      </div>)
   }
 }
 
