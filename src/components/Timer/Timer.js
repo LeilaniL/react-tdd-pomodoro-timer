@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Timer.css';
 import TimerButton from '../TimerButton/TimerButton';
+
+const Timer = () => {
+
+}
 
 class Timer extends Component {
   constructor(props) {
