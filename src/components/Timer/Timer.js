@@ -13,13 +13,36 @@ class Timer extends Component {
   }
 
   startTimer = () => {
+    // TODO write tests with mock timer?
+    // TODO prevent timer from going negative!
+    if (this.state.isOn) return;
+    const { minutes, seconds } = this.state;
     this.setState({ isOn: true })
+    this.myInterval = setInterval(() => {
+      if (seconds > 0) {
+        this.setState(({ seconds }) => ({
+          seconds: seconds - 1,
+        }));
+      }
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(this.myInterval);
+        } else {
+          this.setState(({ minutes }) => ({
+            minutes: minutes - 1,
+            seconds: 59,
+          }));
+        }
+      }
+    }, 1000);
   }
   stopTimer = () => {
-    this.setState({ isOn: false })
+    clearInterval(this.myInterval);
+    this.setState({ isOn: false });
   }
   resetTimer = () => {
-    this.setState({ isOn: false })
+    clearInterval(this.myInterval);
+    this.setState({ isOn: false, minutes: 25, seconds: 0 })
   }
 
   render = () => {
