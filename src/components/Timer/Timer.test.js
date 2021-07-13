@@ -48,5 +48,23 @@ describe('mounted Timer', () => {
     container.find('.reset-timer').first().simulate('click');
     expect(spy).toHaveBeenCalledTimes(1);
   });
+
+  it('should change isOn state to true when the start button is clicked', () => {
+    container.instance().forceUpdate();
+    container.find('.start-timer').first().simulate('click');
+    expect(container.instance().state.isOn).toEqual(true);
+  });
+
+  it('should change isOn state to false when the stop button is clicked', () => {
+    container.instance().forceUpdate();
+    container.find('.stop-timer').first().simulate('click');
+    expect(container.instance().state.isOn).toEqual(false);
+  });
+
+  it('should change isOn state false when the reset button is clicked', () => {
+    container.instance().forceUpdate();
+    container.find('.stop-timer').first().simulate('click');
+    expect(container.instance().state.isOn).toEqual(false);
+  });
 })
 

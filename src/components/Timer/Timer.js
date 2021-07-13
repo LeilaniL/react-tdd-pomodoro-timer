@@ -12,21 +12,21 @@ class Timer extends Component {
     };
   }
 
-  startTimer() {
-    console.log('timer START');
+  startTimer = () => {
+    this.setState({ isOn: true })
   }
-  stopTimer() {
-    console.log('timer STOPPED')
+  stopTimer = () => {
+    this.setState({ isOn: false })
   }
-  resetTimer() {
-    console.log('timer RESET')
+  resetTimer = () => {
+    this.setState({ isOn: false })
   }
 
   render = () => {
     return (
       <div className="timer-container">
         <div className="time-display">
-          // TODO fill out this div
+          {/* TODO fill out this div */}
         </div>
         <div className="timer-button-container">
           <TimerButton className="start-timer" buttonAction={this.startTimer} buttonValue={'Start'} />
